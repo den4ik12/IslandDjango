@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+  <table class="table" align="center">
+      <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Страна</th>
+                            <th>Площадь</th>
+                            <th>Континент</th>
+                        </tr>
+      </thead>
+      <tbody>
+      {% for island in listIsland %}
+          <tr>
+                            <td>{{ island.title }}</td>
+                            <td>{{ island.country }}</td>
+                            <td>{{ island.square }}</td>
+                            <td>{{ island.continent }}</td>
+          </tr>
+      {% endfor %}
+      </tbody>
+                </table>
+
+    <div>
+        <a href="{% url 'home' %}">Домашняя</a>
+        <a href="{% url 'listIsland' %}">Список островов</a>
+        <a href="/admin">Админка</a>
+    </div>
+</body>
+</html>
